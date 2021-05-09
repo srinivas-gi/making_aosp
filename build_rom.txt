@@ -4,6 +4,6 @@ set -exv
 
 # build rom
 . build/envsetup.sh
-lunch arrow_RMX1941-userdebug
+lunch lineage_RMX1941-userdebug
 chmod -R 755 out/
-m bacon
+mka bacon -j$(nproc --all)
