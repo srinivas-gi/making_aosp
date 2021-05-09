@@ -4,13 +4,9 @@ set -exv
 
 sudo apt install wget -y
 
-rm -rf .repo *
-
-git clone https://github.com/P-Salik/making_aosp /tmp/rom
-
 # sync rom
 
-repo init --depth=1 -u git://github.com/LineageOS/android.git -b arrow-11.0
+repo init --depth=1 -u git://github.com/LineageOS/android.git -b lineage-18.1
 
 git clone https://github.com/P-Salik/local_manifest --depth=1 -b main .repo/local_manifests
 
