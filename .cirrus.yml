@@ -1,12 +1,11 @@
 task:
-    name: Sync test
+    name: ROM-Builder
     timeout_in: 240m
     container:
       image: apon77/aosp:latest
       cpu: 8
       memory: 32G
     sync_script:
-      - rm -rf .repo *
       - bash sync_rom.txt
     build_script:
       - bash build_rom.txt
