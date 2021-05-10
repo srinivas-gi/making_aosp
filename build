@@ -2,20 +2,14 @@
 cd /tmp/rom
 rm -rf .repo
 
-
 . build/envsetup.sh
-lunch aosp_RMX1941-userdebug
-export SKIP_API_CHECKS=true
-export SKIP_ABI_CHECKS=true
-cd /tmp/rom
+lunch aosp_RMX1941-userdebug ##edit this
 export CCACHE_DIR=/tmp/ccache  ##use additional flags if you need(optional)
 export CCACHE_EXEC=$(which ccache)
 export USE_CCACHE=1
-
 ccache -M 30G
 ccache -o compression=true
 ccache -z
-ccache -c
 
 up(){
 	curl --upload-file $1 https://transfer.sh/
@@ -28,13 +22,12 @@ make_metalava(){
 }
 
 make_rom(){
-	mka bacon -j8
-	zip=$(up out/target/product/RMX1941/*zip)
+	make bacon -j16
+	zip=$(up out/target/product/RMX1941/*zip) ##edit this change from miatoll---> /<your device codename>
 	echo " "
 	echo "$zip"
-	curl -sL https://git.io/file-transfer | sh
-	./transfer wet out/target/product/RMX1941/*zip
 }
 
 make_metalava
-make_rom
+make_rom &
+sleep 4500 && kill "$!"

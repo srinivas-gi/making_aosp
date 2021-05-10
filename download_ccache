@@ -1,10 +1,10 @@
 #!/bin/bash
 
-url=https://m.mark41stark.workers.dev/0://SyASx.gz
+url=https://floral-fog-00b4.imperonewbie.workers.dev/ccache/ci3/ccache.tar.gz
 
 cd /tmp # Where to download cccahe
 time aria2c $url -x16 -s50
 echo "dl done"
-time tar xf SyASx.gz
+time tar xf ccache-crdroid.tar.gz
 echo "unzip done"
-find SyASx.gz -delete
+find ccache-crdroid.tar.gz -delete
