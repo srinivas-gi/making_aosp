@@ -28,19 +28,19 @@ ccache -s
 #	# 14 days, 10 GB limit
 #}
 
-# It's recommended to use google drive(rclone) as upload solution for coping with the time limit. Un-comment next 3 lines to upload with rclone in drive. Also change apon and junk according to your config name, uploading folder of drive
-#up(){
-#	time rclone copy $1 aosp:ccache -P # apon is my rclone config name, 
-#}
+ It's recommended to use google drive(rclone) as upload solution for coping with the time limit. Un-comment next 3 lines to upload with rclone in drive. Also change apon and junk according to your config name, uploading folder of drive
+up(){
+	time rclone copy $1 aosp:ccache -P # apon is my rclone config name, 
+}
 
-#tg(){
-#	bot_api=1801671077:AAE-qA_LVVRq1z0l0sQjs4gAWm7W_eDw2cg # Your tg bot api, dont use my one haha, it's better to encrypt bot api too.
-#	your_telegram_id=$1 # No need to touch 
-#	msg=$2 # No need to touch
-#	curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" --data "text=$msg&chat_id=${your_telegram_id}"
-#}
+tg(){
+	bot_api=1801671077:AAE-qA_LVVRq1z0l0sQjs4gAWm7W_eDw2cg # Your tg bot api, dont use my one haha, it's better to encrypt bot api too.
+	your_telegram_id=$1 # No need to touch 
+	msg=$2 # No need to touch
+	curl -s "https://api.telegram.org/bot${bot_api}/sendmessage" --data "text=$msg&chat_id=${your_telegram_id}"
+}
 
-#id=1187436130 # Your telegram id
+id=1187436130 # Your telegram id
 
 # Upload rom zip file if succeed to build! Send notification to tg! And send shell to tg if build fails!
 
