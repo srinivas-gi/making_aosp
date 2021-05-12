@@ -1,7 +1,5 @@
 #!/bin/bash
 
-set -evx
-
 cd /tmp
 
 # Compress function with pigz for faster compression
