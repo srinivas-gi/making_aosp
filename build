@@ -22,10 +22,10 @@ ccache -s
 #So, i am adding back things which i removed previously! also with my bot and tg id
 
 # upload function for uploading rom zip file! I don't want unwanted builds in my google drive haha!
-up(){
-	curl --upload-file $1 https://transfer.sh/$(basename $1); echo
-	# 14 days, 10 GB limit
-}
+#up(){
+#	curl --upload-file $1 https://transfer.sh/$(basename $1); echo
+#	# 14 days, 10 GB limit
+#}
 
 
 # Build command! j10 for 10 cpu, j8 for 8 cpu, otherwise memeroy will end up even its 24G
@@ -39,4 +39,5 @@ up(){
 
 #mka bacon -j$(nproc --all) 
 #up out/target/product/RMX1941/*zip
+
 ccache -s # Let's print ccache statistics finally
