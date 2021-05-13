@@ -3,14 +3,14 @@ env: # Environment variables to pass to all tasks
     CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone the aosp-builder repo
 
     # For rclone with google drive or any cloud! After first commit pushing, login to https://cirrus-ci.com , click top left corner 3 dot menu, click repository(yourname/aosp-builder) > Repository Settings > Secured Variables > enter content of ~/.config/rclone/rclone.conf (from pc where you setup rclone) > ENCRYPT, copy that ENCRYPTED hash
-    rclone_config: "ENCRYPTED[c4a87685e90a7d689c53cef6cdf364f9d3425980bad627b9d434b4621108ce3c2432e439b2c2caf9b317bccdc6447115]"
+    rclone_config: "ENCRYPTED[d79fcbbac39cbac216b6a219bc5d5025976c4b00e84fff28e328aec4e91ed91be782dc8c9c897d502a476e2e1970417a]"
 
 task:
     name: PixelExperience # Project name
     timeout_in: 120m # Otherwise it will timeout at 60m automatically, 120m highest in free account
     container:
-      image: apon77/aosp:ccache # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
-      cpu: 4 # 8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
+      image: apon77/aosp:latest # It has built-in setup environment + repo, aria2, rclone, pigz, username ci, and email ci@ci.ci [You can use your own docker image if you want, or you can use this one too!]
+      cpu: 4  #8 or less cpu for dummy build, 8 cpu for the final build, 8cpu highest for free accounts. Don't try to use more than 8cpu as free user, you may get blocked by ci.
       memory: 16G # So that we can have ram when needed, 32G highest
     download_ccache_background_script: # To download ccache in background
       - ./download_ccache # Ccache download script
