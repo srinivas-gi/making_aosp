@@ -3,7 +3,7 @@ env: # Environment variables to pass to all tasks
     CIRRUS_WORKING_DIR: "/tmp/ci" # Where to clone the aosp-builder repo
 
     # For rclone with google drive or any cloud! After first commit pushing, login to https://cirrus-ci.com , click top left corner 3 dot menu, click repository(yourname/aosp-builder) > Repository Settings > Secured Variables > enter content of ~/.config/rclone/rclone.conf (from pc where you setup rclone) > ENCRYPT, copy that ENCRYPTED hash
-    rclone_config: "ENCRYPTED[d79fcbbac39cbac216b6a219bc5d5025976c4b00e84fff28e328aec4e91ed91be782dc8c9c897d502a476e2e1970417a]"
+    rclone_config: "ENCRYPTED[a313d5fe6c8f32a7b52ebfc1840acbee39221ca74f82806f81f45302e32dd5709bcf941e52e2c11fc0026b26f0b6d0a9" 
 
 task:
     name: PixelExperience # Project name
