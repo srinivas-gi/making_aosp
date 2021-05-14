@@ -4,7 +4,7 @@ set -evx
 
 ROM_MANIFEST=https://github.com/PixelExperience/manifest
 BRANCH=eleven
-LOCAL_MANIFEST=https://github.com/P-Salik/local_manifest
+LOCAL_MANIFEST=https://github.com/srinivas-gi/local_manifest
 
 mkdir -p /tmp/rom # Where to sync source
 cd /tmp/rom
